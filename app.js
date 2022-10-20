@@ -7,6 +7,51 @@ app.get("/meunome", (req, res) => res.type('html').send(html1));
 app.get('/tico', (req, res) => {
   res.send('Teco');
 })
+app.get('/pokemons', (req, res) => {
+  let json = [ 
+  {
+    id : 1,
+    nome: "Pikachu"
+  },
+  {
+    id : 2,
+    nome: "Butterfree"
+  },
+  {
+    id : 3,
+    nome: "Pidgeot"
+  },
+  {
+    id : 4,
+    nome: "Charizard"
+  },
+  {
+    id : 5,
+    nome: "Bulbasaur"
+  },
+  {
+    id : 6,
+    nome: "Squirtle"
+  },
+  {
+    id : 7,
+    nome: "Kingler"
+  },
+  {
+    id : 8,
+    nome: "Tauros"
+  },
+  {
+    id : 9,
+    nome: "Muk"
+  },
+  {
+    id : 10,
+    nome: "Primeape"
+  }
+];
+  res.json(json);
+});
 
 app.get('/req', (req, res) => {
     console.log("Just got a request!")
