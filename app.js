@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 5001;
 
+app.use(express.json())
+app.use(express.urlencoded({extended: true}));
+
 app.get("/", (req, res) => res.type('html').send(html));
 app.get("/meunome", (req, res) => res.type('html').send(html1));
 app.get('/tico', (req, res) => {
@@ -52,6 +55,11 @@ app.get('/pokemons', (req, res) => {
 ];
   res.json(json);
 });
+
+app.post('/series', (req, res) => {
+  let series = req.body;
+  res.json(series);
+})
 
 app.get('/req', (req, res) => {
     console.log("Just got a request!")
