@@ -57,7 +57,17 @@ app.get('/pokemons', (req, res) => {
 });
 
 app.post('/series', (req, res) => {
-  let series = req.body;
+  let series = [
+    {
+      nome : "brooklyn 99"
+    },
+    {
+      nome : "Simpsons"
+    },
+    {
+      nome : "Supernatural"
+    },
+];
   res.json(series);
 })
 
